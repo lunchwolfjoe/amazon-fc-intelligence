@@ -239,13 +239,278 @@ def generate_comprehensive_dataset():
         'subject_areas': subject_areas
     }
 
+def create_summary_analytics(data):
+    """Create comprehensive summary analytics and trend charts."""
+    
+    subject_areas = data.get('subject_areas', {})
+    if not subject_areas:
+        st.warning("No data available for analytics")
+        return
+    
+    # Prepare data for visualizations
+    subjects = []
+    post_counts = []
+    comment_counts = []
+    avg_sentiments = []
+    negative_ratios = []
+    positive_ratios = []
+    engagement_scores = []
+    
+    for subject, info in subject_areas.items():
+        subjects.append(subject.replace('_', ' ').title())
+        post_counts.append(info.get('post_count', 0))
+        comment_counts.append(info.get('comment_count', 0))
+        avg_sentiments.append(info.get('avg_sentiment_score', 0))
+        
+        # Calculate sentiment ratios
+        sentiment_dist = info.get('sentiment_distribution', {})
+        total_posts = info.get('post_count', 1)
+        negative_ratio = sentiment_dist.get('NEGATIVE', 0) / total_posts if total_posts > 0 else 0
+        positive_ratio = sentiment_dist.get('POSITIVE', 0) / total_posts if total_posts > 0 else 0
+        negative_ratios.append(negative_ratio * 100)  # Convert to percentage
+        positive_ratios.append(positive_ratio * 100)
+        
+        # Calculate engagement score (posts * avg_comments)
+        avg_comments = info.get('comment_count', 0) / total_posts if total_posts > 0 else 0
+        engagement_scores.append(avg_comments)
+    
+    # Create comprehensive dashboard with multiple charts
+    
+    # Row 1: Volume and Sentiment Overview
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        # Post Volume by Subject
+        fig_volume = go.Figure(data=[
+            go.Bar(
+                x=subjects,
+                y=post_counts,
+                marker_color='#FF9900',
+                text=post_counts,
+                textposition='auto',
+                name='Posts'
+            )
+        ])
+        fig_volume.update_layout(
+            title="📊 Post Volume by Subject Area",
+            xaxis_title="Subject Area",
+            yaxis_title="Number of Posts",
+            height=400,
+            showlegend=False
+        )
+        fig_volume.update_xaxes(tickangle=45)
+        st.plotly_chart(fig_volume, use_container_width=True)
+    
+    with col2:
+        # Average Sentiment by Subject
+        colors = ['#dc3545' if s < -0.1 else '#fd7e14' if s < 0.1 else '#28a745' for s in avg_sentiments]
+        fig_sentiment = go.Figure(data=[
+            go.Bar(
+                x=subjects,
+                y=avg_sentiments,
+                marker_color=colors,
+                text=[f"{s:.3f}" for s in avg_sentiments],
+                textposition='auto',
+                name='Avg Sentiment'
+            )
+        ])
+        fig_sentiment.update_layout(
+            title="📈 Average Sentiment by Subject Area",
+            xaxis_title="Subject Area",
+            yaxis_title="Sentiment Score",
+            height=400,
+            showlegend=False
+        )
+        fig_sentiment.update_xaxes(tickangle=45)
+        fig_sentiment.add_hline(y=0, line_dash="dash", line_color="gray", annotation_text="Neutral")
+        st.plotly_chart(fig_sentiment, use_container_width=True)
+    
+    # Row 2: Sentiment Distribution and Engagement
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        # Sentiment Distribution Comparison
+        fig_sentiment_dist = go.Figure()
+        
+        fig_sentiment_dist.add_trace(go.Bar(
+            name='Negative %',
+            x=subjects,
+            y=negative_ratios,
+            marker_color='#dc3545',
+            text=[f"{r:.1f}%" for r in negative_ratios],
+            textposition='auto'
+        ))
+        
+        fig_sentiment_dist.add_trace(go.Bar(
+            name='Positive %',
+            x=subjects,
+            y=positive_ratios,
+            marker_color='#28a745',
+            text=[f"{r:.1f}%" for r in positive_ratios],
+            textposition='auto'
+        ))
+        
+        fig_sentiment_dist.update_layout(
+            title="🎯 Sentiment Distribution by Subject",
+            xaxis_title="Subject Area",
+            yaxis_title="Percentage of Posts",
+            height=400,
+            barmode='group'
+        )
+        fig_sentiment_dist.update_xaxes(tickangle=45)
+        st.plotly_chart(fig_sentiment_dist, use_container_width=True)
+    
+    with col2:
+        # Engagement Analysis (Comments per Post)
+        fig_engagement = go.Figure(data=[
+            go.Bar(
+                x=subjects,
+                y=engagement_scores,
+                marker_color='#6f42c1',
+                text=[f"{e:.1f}" for e in engagement_scores],
+                textposition='auto',
+                name='Avg Comments per Post'
+            )
+        ])
+        fig_engagement.update_layout(
+            title="💬 Engagement Level by Subject",
+            xaxis_title="Subject Area",
+            yaxis_title="Average Comments per Post",
+            height=400,
+            showlegend=False
+        )
+        fig_engagement.update_xaxes(tickangle=45)
+        st.plotly_chart(fig_engagement, use_container_width=True)
+    
+    # Row 3: Risk Assessment and Overall Sentiment Distribution
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        # Risk Assessment Matrix
+        risk_levels = []
+        for neg_ratio in negative_ratios:
+            if neg_ratio > 40:
+                risk_levels.append("High Risk")
+            elif neg_ratio > 25:
+                risk_levels.append("Medium Risk")
+            else:
+                risk_levels.append("Low Risk")
+        
+        risk_colors = ['#dc3545' if r == "High Risk" else '#fd7e14' if r == "Medium Risk" else '#28a745' for r in risk_levels]
+        
+        fig_risk = go.Figure(data=[
+            go.Bar(
+                x=subjects,
+                y=negative_ratios,
+                marker_color=risk_colors,
+                text=risk_levels,
+                textposition='auto',
+                name='Risk Level'
+            )
+        ])
+        fig_risk.update_layout(
+            title="⚠️ Risk Assessment by Subject Area",
+            xaxis_title="Subject Area",
+            yaxis_title="Negative Sentiment %",
+            height=400,
+            showlegend=False
+        )
+        fig_risk.update_xaxes(tickangle=45)
+        fig_risk.add_hline(y=40, line_dash="dash", line_color="red", annotation_text="High Risk Threshold")
+        fig_risk.add_hline(y=25, line_dash="dash", line_color="orange", annotation_text="Medium Risk Threshold")
+        st.plotly_chart(fig_risk, use_container_width=True)
+    
+    with col2:
+        # Overall Sentiment Distribution Pie Chart
+        overall_sentiment = data.get('overview', {}).get('post_sentiment_distribution', {})
+        if overall_sentiment:
+            fig_pie = go.Figure(data=[
+                go.Pie(
+                    labels=list(overall_sentiment.keys()),
+                    values=list(overall_sentiment.values()),
+                    marker_colors=['#dc3545', '#6c757d', '#28a745'],
+                    hole=0.4,
+                    textinfo='label+percent',
+                    textposition='auto'
+                )
+            ])
+            fig_pie.update_layout(
+                title="🎯 Overall Sentiment Distribution",
+                height=400,
+                showlegend=True,
+                legend=dict(orientation="h", yanchor="bottom", y=-0.1, xanchor="center", x=0.5)
+            )
+            st.plotly_chart(fig_pie, use_container_width=True)
+    
+    # Executive Summary Insights
+    st.markdown("---")
+    st.markdown("### 🎯 Executive Insights")
+    
+    # Calculate key insights
+    highest_volume_subject = subjects[post_counts.index(max(post_counts))]
+    most_negative_subject = subjects[avg_sentiments.index(min(avg_sentiments))]
+    highest_engagement_subject = subjects[engagement_scores.index(max(engagement_scores))]
+    highest_risk_subject = subjects[negative_ratios.index(max(negative_ratios))]
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown(f"""
+        **📊 Volume Leader**  
+        **{highest_volume_subject}** has the most discussions ({max(post_counts)} posts)
+        
+        **💬 Engagement Leader**  
+        **{highest_engagement_subject}** has highest engagement ({max(engagement_scores):.1f} comments/post)
+        """)
+    
+    with col2:
+        st.markdown(f"""
+        **⚠️ Risk Alert**  
+        **{highest_risk_subject}** shows highest negative sentiment ({max(negative_ratios):.1f}%)
+        
+        **📉 Sentiment Concern**  
+        **{most_negative_subject}** has lowest average sentiment ({min(avg_sentiments):.3f})
+        """)
+    
+    with col3:
+        total_negative = sum(overall_sentiment.get('NEGATIVE', 0) for _ in [1])
+        total_posts_overall = sum(overall_sentiment.values()) if overall_sentiment else 1
+        overall_negative_pct = (overall_sentiment.get('NEGATIVE', 0) / total_posts_overall * 100) if total_posts_overall > 0 else 0
+        
+        st.markdown(f"""
+        **📈 Overall Health**  
+        {overall_negative_pct:.1f}% of posts show negative sentiment
+        
+        **🎯 Action Items**  
+        Focus on {most_negative_subject} and {highest_risk_subject} for improvement
+        """)
+    
+    # Trend Analysis Summary
+    st.markdown("---")
+    st.markdown("### 📈 Key Trends & Recommendations")
+    
+    st.markdown(f"""
+    **🔍 Analysis Summary:**
+    - **Highest Activity**: {highest_volume_subject} dominates discussion volume
+    - **Engagement Hotspot**: {highest_engagement_subject} generates most discussion per post
+    - **Risk Area**: {highest_risk_subject} requires immediate attention ({max(negative_ratios):.1f}% negative)
+    - **Sentiment Concern**: {most_negative_subject} shows concerning sentiment trends
+    
+    **💡 Executive Recommendations:**
+    1. **Immediate Action**: Address concerns in {most_negative_subject} and {highest_risk_subject}
+    2. **Monitor Closely**: Track sentiment changes in high-volume areas like {highest_volume_subject}
+    3. **Leverage Success**: Learn from positive engagement patterns in lower-risk subjects
+    4. **Regular Review**: Weekly sentiment monitoring for early risk detection
+    """)
+
 def create_executive_dashboard(data):
-    """Create executive overview."""
+    """Create executive overview with comprehensive analytics."""
     
     st.markdown('<h1 class="main-header">🎯 Amazon FC Intelligence Platform</h1>', unsafe_allow_html=True)
     
     overview = data.get('overview', {})
     
+    # Key Metrics Row
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
@@ -286,6 +551,13 @@ def create_executive_dashboard(data):
             <div style="font-size: 0.85rem; color: #495057;">ML-classified topics</div>
         </div>
         """, unsafe_allow_html=True)
+    
+    # Analytics Section
+    st.markdown("---")
+    st.markdown("## 📊 Executive Analytics & Trends")
+    
+    # Create comprehensive analytics charts
+    create_summary_analytics(data)
 
 def create_subject_analysis(data):
     """Create subject analysis with full post navigation."""

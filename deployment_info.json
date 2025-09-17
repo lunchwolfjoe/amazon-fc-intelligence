@@ -1,0 +1,8 @@
+{
+  "deployment_date": "2025-09-17T15:52:25.678828",
+  "data_included": true,
+  "sample_data_file": "sample_data.json",
+  "sample_db_file": "sample_reddit_data.db",
+  "dashboard_file": "elite_fc_dashboard.py",
+  "streamlit_entry": "streamlit_app.py"
+}

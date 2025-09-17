@@ -1,0 +1,17 @@
+{
+  "name": "compensation-dashboard-api",
+  "version": "1.0.0",
+  "description": "API server for compensation sentiment analysis dashboard",
+  "main": "api-server.js",
+  "scripts": {
+    "start-api": "node api-server.js",
+    "dev-api": "nodemon api-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

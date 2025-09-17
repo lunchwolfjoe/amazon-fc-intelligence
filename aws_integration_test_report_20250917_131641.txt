@@ -1,0 +1,20 @@
+🎯 AWS SENTIMENT INTEGRATION TEST REPORT
+============================================================
+📊 Test Date: 2025-09-17T13:16:41.008751
+
+📈 TEST RESULTS SUMMARY
+------------------------------
+Total Tests: 1
+Passed: 0
+Failed: 1
+Success Rate: 0.0%
+
+🔍 INDIVIDUAL TEST RESULTS
+------------------------------
+❌ FAILED: Setup
+
+💡 RECOMMENDATIONS
+------------------------------
+⚠️  Some tests failed. Please review the logs and fix issues before deployment.
+
+🔄 Run this test again after making configuration changes

@@ -1,0 +1,725 @@
+{
+  "summary": {
+    "total_wage_posts": 152,
+    "total_wage_comments": 797,
+    "average_post_score": 26.1,
+    "average_comments_per_post": 23.7,
+    "time_range": "09/15/2025 to 09/17/2025",
+    "data_freshness": "Last 7 days"
+  },
+  "sentiment_analysis": {
+    "post_sentiment_distribution": {
+      "NEUTRAL": 124,
+      "NEGATIVE": 15,
+      "POSITIVE": 13
+    },
+    "comment_sentiment_distribution": {
+      "NEUTRAL": 704,
+      "NEGATIVE": 38,
+      "POSITIVE": 55
+    },
+    "post_examples": {
+      "POSITIVE": [
+        {
+          "title": "$1.10 raise",
+          "score": 44,
+          "comments": 27,
+          "indicators": [
+            "satisfied"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "title": "Raises",
+          "score": 16,
+          "comments": 75,
+          "indicators": [
+            "great"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "title": "Interview for Hazmat Waste Coordinator",
+          "score": 4,
+          "comments": 4,
+          "indicators": [
+            "love"
+          ],
+          "confidence": 0.7
+        }
+      ],
+      "NEGATIVE": [
+        {
+          "title": "Mental health support same day as abysmal wage increase #DSA6",
+          "score": 3,
+          "comments": 2,
+          "indicators": [
+            "bad"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "title": "Paystub access",
+          "score": 8,
+          "comments": 4,
+          "indicators": [
+            "bad"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "title": "Did the white to blue badge ratio requirements change from what it was previously?",
+          "score": 2,
+          "comments": 5,
+          "indicators": [
+            "bad"
+          ],
+          "confidence": 0.7
+        }
+      ],
+      "NEUTRAL": [
+        {
+          "title": "Lines for bathroom",
+          "score": 1,
+          "comments": 1,
+          "indicators": [],
+          "confidence": 0.5
+        },
+        {
+          "title": "Starting as a flex shift associate at delivery station",
+          "score": 1,
+          "comments": 4,
+          "indicators": [],
+          "confidence": 0.5
+        },
+        {
+          "title": "Amazon USA Shipping to Egypt Weirdddd issue",
+          "score": 0,
+          "comments": 1,
+          "indicators": [],
+          "confidence": 0.5
+        }
+      ]
+    },
+    "comment_examples": {
+      "POSITIVE": [
+        {
+          "content": "\"i'M acTuAllY gRatEfUL fOr tHE raIsE\" - \ud83e\udd21",
+          "score": 1,
+          "post_title": "They told us this morning during startup we were in the top 5. Two hours later, they gave us a 50 cent raise.",
+          "indicators": [
+            "grateful"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "content": "I have dental, vision and health insurance (not as good as the one I have when I was FT).",
+          "score": 1,
+          "post_title": "Flex associates",
+          "indicators": [
+            "good"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "content": "Nope you\u2019re pretty much screwed and no good coverage is affordable, just hope to get RT",
+          "score": 1,
+          "post_title": "Flex associates",
+          "indicators": [
+            "good"
+          ],
+          "confidence": 0.7
+        }
+      ],
+      "NEGATIVE": [
+        {
+          "content": "You know it's bad when people are apologizing about the raise \ud83d\ude2d",
+          "score": 1,
+          "post_title": "To all of the white badge associates today...",
+          "indicators": [
+            "bad"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "content": "Yes I had it happen to me a while ago and used my badge id to enter",
+          "score": 1,
+          "post_title": "Paystub access",
+          "indicators": [
+            "bad"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "content": "You will get time and a half for working on holidays. \n\nBut you won't get the 8 hours of holiday they freely give to blue badge associates whether they work the holiday or not.\n\nWhite badge working ho...",
+          "score": 1,
+          "post_title": "Overtime",
+          "indicators": [
+            "bad"
+          ],
+          "confidence": 0.7
+        }
+      ],
+      "NEUTRAL": [
+        {
+          "content": "50 cent base pay raise, 80 cent for 3+ year aas",
+          "score": 1,
+          "post_title": "Any updates on the raise in Las Vegas?",
+          "indicators": [],
+          "confidence": 0.5
+        },
+        {
+          "content": "PSYOP is what Amazon is best at.",
+          "score": 1,
+          "post_title": "Mental health support same day as abysmal wage increase #DSA6",
+          "indicators": [],
+          "confidence": 0.5
+        },
+        {
+          "content": "\nWelcome to AmazonFC, please be sure to read our submission guidelines and remain respectful of your fellow users. If this post isn't up to par with our submission guidelines, please make use of the r...",
+          "score": 1,
+          "post_title": "Mental health support same day as abysmal wage increase #DSA6",
+          "indicators": [],
+          "confidence": 0.5
+        }
+      ]
+    },
+    "overall_sentiment_trend": "NEUTRAL"
+  },
+  "key_themes": {
+    "top_themes": [
+      [
+        "promotions",
+        1073
+      ],
+      [
+        "overtime",
+        411
+      ],
+      [
+        "benefits",
+        48
+      ],
+      [
+        "working_conditions",
+        36
+      ],
+      [
+        "pay_rates",
+        18
+      ]
+    ],
+    "theme_details": {
+      "promotions": {
+        "keywords": [
+          "promotion",
+          "tier up",
+          "tier 3",
+          "tier 4",
+          "pa",
+          "am",
+          "manager"
+        ],
+        "mentions": 1073,
+        "examples": []
+      },
+      "overtime": {
+        "keywords": [
+          "overtime",
+          "ot",
+          "time and a half",
+          "double time",
+          "mandatory ot"
+        ],
+        "mentions": 411,
+        "examples": []
+      },
+      "benefits": {
+        "keywords": [
+          "benefits",
+          "health insurance",
+          "dental",
+          "vision",
+          "401k",
+          "stock",
+          "pto"
+        ],
+        "mentions": 48,
+        "examples": []
+      },
+      "working_conditions": {
+        "keywords": [
+          "conditions",
+          "safety",
+          "break",
+          "bathroom",
+          "pace",
+          "quota",
+          "rate"
+        ],
+        "mentions": 36,
+        "examples": []
+      },
+      "pay_rates": {
+        "keywords": [
+          "$15",
+          "$16",
+          "$17",
+          "$18",
+          "$19",
+          "$20",
+          "hourly",
+          "per hour",
+          "minimum wage"
+        ],
+        "mentions": 18,
+        "examples": []
+      },
+      "comparison": {
+        "keywords": [
+          "other jobs",
+          "walmart",
+          "target",
+          "fedex",
+          "ups",
+          "better pay",
+          "worse pay"
+        ],
+        "mentions": 11,
+        "examples": []
+      }
+    }
+  },
+  "pay_mentions": {
+    "dollar_amounts": [
+      "$1.10",
+      "$1.10",
+      "$23",
+      "$0.50",
+      "$0.50",
+      "$0.50",
+      "$2.50",
+      "$23.40",
+      "$24.50",
+      "$20",
+      "$1",
+      "$1.50",
+      "$1.10",
+      "$21.90",
+      "$1.10",
+      "$23",
+      "$21.90",
+      "$23.40",
+      "$23",
+      "$1000",
+      "$2",
+      "$24.50",
+      "$5",
+      "$19.20",
+      "$1.65",
+      "$0.50",
+      "$1.10",
+      "$0.70",
+      "$1.35",
+      "$21",
+      "$25",
+      "$2.50",
+      "$22.50",
+      "$1800",
+      "$730",
+      "$2300",
+      "$1.10",
+      "$1.70",
+      "$350",
+      "$250",
+      "$4",
+      "$1",
+      "$1.50",
+      "$1.10",
+      "$80",
+      "$1.10",
+      "$1.10",
+      "$0.50",
+      "$1.10",
+      "$22",
+      "$0.50",
+      "$1300",
+      "$1.10",
+      "$30",
+      "$1.10",
+      "$1",
+      "$23",
+      "$1.10",
+      "$22.90",
+      "$1.10",
+      "$23.65",
+      "$24.75",
+      "$1.10",
+      "$23.65",
+      "$1.10",
+      "$24.75",
+      "$1.50",
+      "$2",
+      "$1.10",
+      "$1.10",
+      "$23.65",
+      "$26.50",
+      "$20",
+      "$30",
+      "$20",
+      "$20",
+      "$10",
+      "$800",
+      "$300",
+      "$200",
+      "$100",
+      "$200",
+      "$800",
+      "$300",
+      "$1",
+      "$1",
+      "$100",
+      "$21",
+      "$1.10",
+      "$23.40",
+      "$24.50",
+      "$23.40",
+      "$1.50",
+      "$1.10",
+      "$20",
+      "$1",
+      "$1",
+      "$1.10",
+      "$27.35",
+      "$1.50",
+      "$30",
+      "$12.50",
+      "$0.60",
+      "$24.65",
+      "$1.10",
+      "$1.10",
+      "$1.10",
+      "$23",
+      "$1.10",
+      "$22.50",
+      "$23.40",
+      "$1",
+      "$0.50",
+      "$1.10",
+      "$1.20",
+      "$19.95",
+      "$1.10",
+      "$1.10",
+      "$2",
+      "$2",
+      "$1.10",
+      "$1.10",
+      "$23.40",
+      "$2",
+      "$25.80",
+      "$1.50",
+      "$2",
+      "$3",
+      "$0.50",
+      "$12",
+      "$5.31",
+      "$0.50",
+      "$0.36",
+      "$1.50",
+      "$60",
+      "$1.30",
+      "$1",
+      "$30",
+      "$23",
+      "$30",
+      "$1.50",
+      "$2",
+      "$1.50",
+      "$2",
+      "$21.40",
+      "$0.40",
+      "$1.10",
+      "$28",
+      "$32",
+      "$3",
+      "$3.50",
+      "$21",
+      "$21.50",
+      "$25.00",
+      "$27",
+      "$28",
+      "$21",
+      "$25",
+      "$21.90",
+      "$25",
+      "$21.95",
+      "$25",
+      "$75",
+      "$1.10",
+      "$1.25",
+      "$2.10",
+      "$25",
+      "$21",
+      "$20",
+      "$1.50",
+      "$0.10",
+      "$21.60",
+      "$1",
+      "$2",
+      "$25",
+      "$24",
+      "$1",
+      "$2",
+      "$2.50",
+      "$1.50",
+      "$1.50",
+      "$29",
+      "$29",
+      "$25",
+      "$1.50",
+      "$1.50",
+      "$23",
+      "$18",
+      "$95",
+      "$45",
+      "$50",
+      "$25",
+      "$25",
+      "$2",
+      "$25",
+      "$30"
+    ],
+    "hourly_rates": [
+      "$23/hr",
+      "$19.20/hr",
+      "$21/hr",
+      "$25/hr",
+      "$22.90/hr",
+      "$20/hr",
+      "$30/hr",
+      "$20/hr",
+      "$20/hr",
+      "$10/hr",
+      "$23.40/hr",
+      "$20/hr",
+      "$27.35/hr",
+      "$30/hr",
+      "$12.50/hr",
+      "$50/hr",
+      "$23/hr",
+      "$12/hr",
+      "$24/hr",
+      "$21/hr",
+      "$25.00/hr",
+      "$25/hr",
+      "$25/hr",
+      "$21.60/hr",
+      "$1.80/hr",
+      "$29/hr",
+      "$25/hr",
+      "$23/hr",
+      "$18/hr",
+      "$19/hr"
+    ],
+    "salary_ranges": [],
+    "most_mentioned": [
+      "$1.10",
+      "$1.50",
+      "$25",
+      "$1",
+      "$2"
+    ]
+  },
+  "top_posts": [
+    {
+      "title": "Reaction to 50 cent raise \ud83e\udd23",
+      "score": 299,
+      "comments": 215,
+      "engagement": 514,
+      "author": "Imaginary_Tap_4242",
+      "created_date": "2025-09-17 11:20:22",
+      "content_preview": ""
+    },
+    {
+      "title": "Inappropriate clothing?",
+      "score": 240,
+      "comments": 249,
+      "engagement": 489,
+      "author": "sekhmetbastet",
+      "created_date": "2025-09-16 15:56:14",
+      "content_preview": "Is this normal within all Amazon warehouses?I can't imagine feeling comfortable dressing like this at work around a bunch of men \ud83d\ude2c"
+    },
+    {
+      "title": "Raise",
+      "score": 391,
+      "comments": 69,
+      "engagement": 460,
+      "author": "Vitajimmi",
+      "created_date": "2025-09-16 18:38:54",
+      "content_preview": "Rent is going up again!"
+    },
+    {
+      "title": "Fire is crazy\ud83d\udd25",
+      "score": 192,
+      "comments": 120,
+      "engagement": 312,
+      "author": "yy4lexx",
+      "created_date": "2025-09-16 08:05:38",
+      "content_preview": "fire at my site, still outside\ud83d\ude02"
+    },
+    {
+      "title": "W feature?",
+      "score": 223,
+      "comments": 86,
+      "engagement": 309,
+      "author": "Individual_Run_8035",
+      "created_date": "2025-09-16 14:52:28",
+      "content_preview": "I feel like these time off options and changes are nice. "
+    },
+    {
+      "title": "Do you guys think it\u2019s time for a new bigger wage at Amazon as of seeing cost of living going up right now?",
+      "score": 129,
+      "comments": 179,
+      "engagement": 308,
+      "author": "YouFoundFred",
+      "created_date": "2025-09-16 15:17:12",
+      "content_preview": "Mine is $22.50 max as an Amazon associate "
+    },
+    {
+      "title": "Pay raise for Tier 1 and 3",
+      "score": 116,
+      "comments": 176,
+      "engagement": 292,
+      "author": "Kychiii",
+      "created_date": "2025-09-17 05:39:27",
+      "content_preview": "Tier 1 gets $0.50 for bottom of step plan 36-month tenures $1.10\n\nTier 3s get $0.70(?) and up to 36-month tenures get $1.35\n\nEDIT: I\u2019m in California. Raise will scale off tenure/step plan, the more te..."
+    },
+    {
+      "title": "Let the games begin \ud83d\udcaa",
+      "score": 258,
+      "comments": 28,
+      "engagement": 286,
+      "author": "Emergency_Grade_4616",
+      "created_date": "2025-09-16 05:18:12",
+      "content_preview": "#DSA6"
+    },
+    {
+      "title": "Guys I finally hit 30!!",
+      "score": 216,
+      "comments": 46,
+      "engagement": 262,
+      "author": "PassionateYak",
+      "created_date": "2025-09-15 21:28:43",
+      "content_preview": "On the dot. First time in a year and without getting VTO. 60 hour weeks are a bitch but they make it happen fast.\nAnother milestone in the bag. \n\nSee you at 40"
+    },
+    {
+      "title": "Real or Fake? Do you earn $23 an hour?",
+      "score": 53,
+      "comments": 192,
+      "engagement": 245,
+      "author": "Good-Handle-2116",
+      "created_date": "2025-09-17 09:31:21",
+      "content_preview": "**Do half of us really earn $23?**\n\n50\u00a2 raise is an extra $1000 per year. How much is rent increasing? Groceries?"
+    }
+  ],
+  "representative_examples": {
+    "highly_positive": [
+      {
+        "type": "post",
+        "title": "Raises",
+        "content": "Well under Biden we got $1.50 raise and under Trump we get .50\u2026\u2026.   Looks like Biden was the one really making America great!!",
+        "score": 16,
+        "comments": 75
+      },
+      {
+        "type": "post",
+        "title": "Interview for Hazmat Waste Coordinator",
+        "content": "I currently work at Amazon and have experience in inbound, stow, and as a problem solver. I\u2019ve also been involved in safety-related tasks. I\u2019m brushing up on STAR-based interview stories and Amazon\u2019s Leadership Principles, but I\u2019d love to hear from others: \u2022\tWhat kind of questions did they ask? \u2022\tAn...",
+        "score": 4,
+        "comments": 4
+      },
+      {
+        "type": "post",
+        "title": "Has anyone been reinstated after a DLS mistake",
+        "content": "got an email saying there were \u201cinconsistencies\u201d in my documents, so I went ahead and provided all the information they asked for. I thought everything was good since the investigator stopped responding, but about two weeks later I was suddenly terminated with no notice.\n\nA day after my termination,...",
+        "score": 2,
+        "comments": 1
+      }
+    ],
+    "highly_negative": [
+      {
+        "type": "post",
+        "title": "Pay raise is a fucking joke",
+        "content": "",
+        "score": 31,
+        "comments": 54
+      }
+    ],
+    "constructive_feedback": [],
+    "pay_specific": [
+      {
+        "type": "post",
+        "title": "$1.10 raise",
+        "content": "I\u2019ve been at my FC for 4 years (too long I know but they pay for my degree)\u2026 the 36 month raise went from $23.40 to $24.50. I\u2019m pretty satisfied with that. ",
+        "score": 44,
+        "comments": 27
+      },
+      {
+        "type": "post",
+        "title": "Pay raises",
+        "content": "I start 10/1, my base pay is $20, will I get the raise too or just keep the same pay ",
+        "score": 0,
+        "comments": 3
+      },
+      {
+        "type": "post",
+        "title": "Amazon annual wage review",
+        "content": "As the title says, we got a raise. I saw another post just saying \"raise,\" nothing more. I did, however, miss this morning's town hall meeting. But I was told everyone here at my site got a $1 raise, while people who have been here longer (4 years or more) got a bit more. I'll have my meeting tomorr...",
+        "score": 0,
+        "comments": 3
+      }
+    ]
+  },
+  "timeline_analysis": {
+    "daily_distribution": {
+      "2025-09-15": 1,
+      "2025-09-16": 32,
+      "2025-09-17": 119
+    },
+    "hourly_distribution": {
+      "1": 3,
+      "2": 3,
+      "3": 3,
+      "4": 7,
+      "5": 7,
+      "6": 6,
+      "7": 6,
+      "8": 9,
+      "9": 11,
+      "10": 14,
+      "11": 23,
+      "12": 9,
+      "13": 11,
+      "14": 14,
+      "15": 6,
+      "16": 1,
+      "18": 3,
+      "19": 2,
+      "20": 1,
+      "21": 4,
+      "22": 5,
+      "23": 4
+    },
+    "peak_day": "2025-09-17",
+    "peak_hour": 11
+  },
+  "engagement_metrics": {
+    "total_score": 3967,
+    "total_comments": 3599,
+    "average_score": 26.1,
+    "average_comments": 23.7,
+    "high_engagement_posts": 31,
+    "engagement_rate": 20.4
+  },
+  "generated_at": "2025-09-17T15:17:55.710803"
+}

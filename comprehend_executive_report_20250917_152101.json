@@ -1,0 +1,407 @@
+{
+  "summary": {
+    "total_compensation_posts": 64,
+    "total_compensation_comments": 146,
+    "average_post_score": 20.8,
+    "average_comments_per_post": 23.8,
+    "dominant_sentiment": "NEUTRAL",
+    "post_sentiment_distribution": {
+      "NEGATIVE": 12,
+      "NEUTRAL": 41,
+      "POSITIVE": 11
+    },
+    "comment_sentiment_distribution": {
+      "NEGATIVE": 35,
+      "NEUTRAL": 70,
+      "POSITIVE": 30,
+      "MIXED": 11
+    },
+    "analysis_method": "AWS Comprehend ML-based analysis",
+    "confidence_level": "High (ML-powered)"
+  },
+  "sentiment_analysis": {
+    "sentiment_examples": {
+      "POSITIVE": {
+        "posts": [
+          {
+            "title": "Denver being low cost living state is kinda funny.",
+            "text_preview": "Denver being low cost living state is kinda funny. Colorado is not as expensive as NY or California I bet but it ain\u2019t the cheapest in the country. But Colorado Amazonian are getting the bottom of the...",
+            "confidence": 0.9044507741928101,
+            "score": "3",
+            "comments": "14"
+          },
+          {
+            "title": "$1.10 raise",
+            "text_preview": "$1.10 raise I\u2019ve been at my FC for 4 years (too long I know but they pay for my degree)\u2026 the 36 month raise went from $23.40 to $24.50. I\u2019m pretty satisfied with that.",
+            "confidence": 0.959843635559082,
+            "score": "44",
+            "comments": "27"
+          },
+          {
+            "title": "Amazon annual wage review",
+            "text_preview": "Amazon annual wage review As the title says, we got a raise. I saw another post just saying \"raise,\" nothing more. I did, however, miss this morning's town hall meeting. But I was told everyone here a...",
+            "confidence": 0.3637748062610626,
+            "score": "0",
+            "comments": "3"
+          }
+        ],
+        "comments": [
+          {
+            "text_preview": "They said, October 4th pay period and it\u2019s more than $0.50 if you aren\u2019t a new hire. 3+ year AAs got $1.10 raise. Personally, in this economy and with the job numbers in the toilet, I\u2019m glad to have a...",
+            "confidence": 0.7125570178031921,
+            "score": "1"
+          },
+          {
+            "text_preview": "You should also be getting a raise too",
+            "confidence": 0.9813430905342102,
+            "score": "1"
+          },
+          {
+            "text_preview": "You get a raise in work load",
+            "confidence": 0.7450291514396667,
+            "score": "1"
+          }
+        ]
+      },
+      "NEGATIVE": {
+        "posts": [
+          {
+            "title": "Mental health support same day as abysmal wage increase #DSA6",
+            "text_preview": "Mental health support same day as abysmal wage increase #DSA6 Stickers, pens, badges, sweets offered at DSA6 to offset the decline in mental health after the disappointment of wage increase!!!\n\nThey d...",
+            "confidence": 0.8217147588729858,
+            "score": "5",
+            "comments": "3"
+          },
+          {
+            "title": "Anyone know when UPT bonuses are added throughout the year",
+            "text_preview": "Anyone know when UPT bonuses are added throughout the year I was on a leave of absence for 1 month, and when I came back on, the system put me a total of 80 hours of UPT bonus, I tried talking to HR b...",
+            "confidence": 0.9828118681907654,
+            "score": "0",
+            "comments": "7"
+          },
+          {
+            "title": "Paystub access",
+            "text_preview": "Paystub access I\u2019ve logged into my atoz app,tried to gain access to view my paystub but every time click on \u201c see pay details\u201d it takes me to the Amazon prizm log in and I cant enter my badge ID! It w...",
+            "confidence": 0.7398747801780701,
+            "score": "7",
+            "comments": "4"
+          }
+        ],
+        "comments": [
+          {
+            "text_preview": "What was the wage increase? My site hasn\u2019t notified me about that",
+            "confidence": 0.7171376347541809,
+            "score": "1"
+          },
+          {
+            "text_preview": "Someone screwed up and you got lucky, that\u2019s why. There are no bonuses.",
+            "confidence": 0.9771798253059387,
+            "score": "1"
+          },
+          {
+            "text_preview": "I\u2019m no longer apart of this sub cause I just quit about a week ago, but this is the stuff that really drove me to quit. My boyfriend is still grinding it\nout, as a white badge (coming up on 11 months ...",
+            "confidence": 0.9629242420196533,
+            "score": "1"
+          }
+        ]
+      },
+      "NEUTRAL": {
+        "posts": [
+          {
+            "title": "Flex associates",
+            "text_preview": "Flex associates Anyone knows if Flex associates will get new benefits this year? Such as health insurance?",
+            "confidence": 0.9751930832862854,
+            "score": "3",
+            "comments": "6"
+          },
+          {
+            "title": "Raise Reflect",
+            "text_preview": "Raise Reflect When will the .50 raise reflect on pay?",
+            "confidence": 0.9804274439811707,
+            "score": "0",
+            "comments": "2"
+          },
+          {
+            "title": "Georgia raise",
+            "text_preview": "Georgia raise Does anyone know if pga1, atl2 and mge3 are getting a raise ?",
+            "confidence": 0.9611783623695374,
+            "score": "2",
+            "comments": "3"
+          }
+        ],
+        "comments": [
+          {
+            "text_preview": "50 cent base pay raise, 80 cent for 3+ year aas",
+            "confidence": 0.8876280784606934,
+            "score": "1"
+          },
+          {
+            "text_preview": "Lubbock Texas here. We got a .50 raise.",
+            "confidence": 0.6088720560073853,
+            "score": "1"
+          },
+          {
+            "text_preview": "What is T3 pay in NC ? I\u2019m a T3 in NY",
+            "confidence": 0.9777117967605591,
+            "score": "1"
+          }
+        ]
+      },
+      "MIXED": {
+        "posts": [],
+        "comments": [
+          {
+            "text_preview": "The raise would put me over $23. Honestly would be nicer if my site had an overnight differential but we don\u2019t so overnight shift is always shafted",
+            "confidence": 0.5218164324760437,
+            "score": "1"
+          },
+          {
+            "text_preview": "You'll get ot pay after 40 hours or regular work, but you don't get holiday pay or vacation, but you get unlimited pto cause you don't earn vacation from what I've heard from others.",
+            "confidence": 0.8128681778907776,
+            "score": "1"
+          },
+          {
+            "text_preview": "I'm gonna be making $22.90/hr with this raise, even as a white badge. Being converted with be nice for that extra 50 cents, though. And I absolutely need dental insurance sooner than later. But I'll h...",
+            "confidence": 0.540004312992096,
+            "score": "1"
+          }
+        ]
+      }
+    },
+    "analysis_quality": "High - AWS Comprehend ML analysis",
+    "total_analyzed": 210
+  },
+  "key_themes": {
+    "primary_themes": [
+      "Compensation",
+      "Pay Rates",
+      "Benefits",
+      "Working Conditions"
+    ],
+    "theme_confidence": "High - ML-based extraction"
+  },
+  "top_posts": [
+    {
+      "title": "Raise",
+      "score": 390,
+      "comments": 69,
+      "engagement": 459,
+      "sentiment": "POSITIVE",
+      "sentiment_confidence": 0.5203880667686462,
+      "content_preview": "Rent is going up again!",
+      "created_date": "2025-09-16 18:38:54"
+    },
+    {
+      "title": "Do you guys think it\u2019s time for a new bigger wage at Amazon as of seeing cost of living going up right now?",
+      "score": 131,
+      "comments": 179,
+      "engagement": 310,
+      "sentiment": "NEGATIVE",
+      "sentiment_confidence": 0.5672718286514282,
+      "content_preview": "Mine is $22.50 max as an Amazon associate ",
+      "created_date": "2025-09-16 15:17:12"
+    },
+    {
+      "title": "Pay raise for Tier 1 and 3",
+      "score": 116,
+      "comments": 176,
+      "engagement": 292,
+      "sentiment": "NEUTRAL",
+      "sentiment_confidence": 0.9629623889923096,
+      "content_preview": "Tier 1 gets $0.50 for bottom of step plan 36-month tenures $1.10\n\nTier 3s get $0.70(?) and up to 36-month tenures get $1.35\n\nEDIT: I\u2019m in California. Raise will scale off tenure/step plan, the more te...",
+      "created_date": "2025-09-17 05:39:27"
+    },
+    {
+      "title": "Real or Fake? Do you earn $23 an hour?",
+      "score": 51,
+      "comments": 192,
+      "engagement": 243,
+      "sentiment": "NEUTRAL",
+      "sentiment_confidence": 0.6651299595832825,
+      "content_preview": "**Do half of us really earn $23?**\n\n50\u00a2 raise is an extra $1000 per year. How much is rent increasing? Groceries?",
+      "created_date": "2025-09-17 09:31:21"
+    },
+    {
+      "title": "Workers with the day off tomorrow refreshing Reddit every 5 minutes waiting for the first raise announcement.",
+      "score": 189,
+      "comments": 37,
+      "engagement": 226,
+      "sentiment": "NEUTRAL",
+      "sentiment_confidence": 0.7987849116325378,
+      "content_preview": "I asked Santa for a living wage for a 40 hour week. ",
+      "created_date": "2025-09-16 14:51:17"
+    },
+    {
+      "title": "TX PAY RAISE: - $0.50 base pay + step plan cap and rate increase (unknown amount believe 1$ per year)",
+      "score": 61,
+      "comments": 108,
+      "engagement": 169,
+      "sentiment": "NEUTRAL",
+      "sentiment_confidence": 0.5158360004425049,
+      "content_preview": "Know this for a fact. Saw a PDF packet left on a Screen, could only glance at the open page",
+      "created_date": "2025-09-17 02:01:27"
+    },
+    {
+      "title": "New raise!",
+      "score": 35,
+      "comments": 105,
+      "engagement": 140,
+      "sentiment": "NEUTRAL",
+      "sentiment_confidence": 0.49710869789123535,
+      "content_preview": "As a tier 1 associate, that\u2019s already capped out. My new pay will be $24.50. I guess I\u2019ll take it. ",
+      "created_date": "2025-09-17 08:02:02"
+    },
+    {
+      "title": "To all of the white badge associates today...",
+      "score": 92,
+      "comments": 40,
+      "engagement": 132,
+      "sentiment": "POSITIVE",
+      "sentiment_confidence": 0.7542006373405457,
+      "content_preview": "I'm sorry you guys are getting shafted the hardest today with the whole 50 cent raise shit today. Especially anybody who's been a white badge for awhile, my heart goes out to all of you and I'm sendin...",
+      "created_date": "2025-09-17 06:58:31"
+    },
+    {
+      "title": "Raises",
+      "score": 16,
+      "comments": 75,
+      "engagement": 91,
+      "sentiment": "POSITIVE",
+      "sentiment_confidence": 0.5937175154685974,
+      "content_preview": "Well under Biden we got $1.50 raise and under Trump we get .50\u2026\u2026.   Looks like Biden was the one really making America great!!",
+      "created_date": "2025-09-17 11:04:49"
+    },
+    {
+      "title": "Pay raise is a fucking joke",
+      "score": 30,
+      "comments": 54,
+      "engagement": 84,
+      "sentiment": "NEGATIVE",
+      "sentiment_confidence": 0.9969707727432251,
+      "content_preview": "",
+      "created_date": "2025-09-17 04:34:16"
+    }
+  ],
+  "representative_examples": {
+    "highly_positive": [
+      {
+        "type": "post",
+        "title": "Denver being low cost living state is kinda funny.",
+        "content": "Denver being low cost living state is kinda funny. Colorado is not as expensive as NY or California I bet but it ain\u2019t the cheapest in the country. But Colorado Amazonian are getting the bottom of the...",
+        "confidence": 0.9044507741928101,
+        "score": "3"
+      },
+      {
+        "type": "post",
+        "title": "$1.10 raise",
+        "content": "$1.10 raise I\u2019ve been at my FC for 4 years (too long I know but they pay for my degree)\u2026 the 36 month raise went from $23.40 to $24.50. I\u2019m pretty satisfied with that.",
+        "confidence": 0.959843635559082,
+        "score": "44"
+      },
+      {
+        "type": "post",
+        "title": "Raise",
+        "content": "Raise I just became tier 3 four months ago. Currently making $21.90 hr. Pay raise was $1.10 so now I will be making $23 hrs. Plus I get my 6 month raise in 2 months which is another .40 cents. Not bad...",
+        "confidence": 0.908097505569458,
+        "score": "4"
+      }
+    ],
+    "highly_negative": [
+      {
+        "type": "post",
+        "title": "Mental health support same day as abysmal wage increase #DSA6",
+        "content": "Mental health support same day as abysmal wage increase #DSA6 Stickers, pens, badges, sweets offered at DSA6 to offset the decline in mental health after the disappointment of wage increase!!!\n\nThey d...",
+        "confidence": 0.8217147588729858,
+        "score": "5"
+      },
+      {
+        "type": "post",
+        "title": "Anyone know when UPT bonuses are added throughout the year",
+        "content": "Anyone know when UPT bonuses are added throughout the year I was on a leave of absence for 1 month, and when I came back on, the system put me a total of 80 hours of UPT bonus, I tried talking to HR b...",
+        "confidence": 0.9828118681907654,
+        "score": "0"
+      },
+      {
+        "type": "post",
+        "title": "why did i get a 40 cent raise and yall are saying it's 50 cent ?",
+        "content": "why did i get a 40 cent raise and yall are saying it's 50 cent ? I'm from Texas",
+        "confidence": 0.8182714581489563,
+        "score": "0"
+      }
+    ],
+    "mixed_sentiment": [],
+    "high_confidence": [
+      {
+        "type": "post",
+        "sentiment": "NEUTRAL",
+        "title": "Flex associates",
+        "content": "Flex associates Anyone knows if Flex associates will get new benefits this year? Such as health insurance?",
+        "confidence": 0.9751930832862854
+      },
+      {
+        "type": "post",
+        "sentiment": "NEUTRAL",
+        "title": "Raise Reflect",
+        "content": "Raise Reflect When will the .50 raise reflect on pay?",
+        "confidence": 0.9804274439811707
+      },
+      {
+        "type": "post",
+        "sentiment": "NEGATIVE",
+        "title": "Anyone know when UPT bonuses are added throughout the year",
+        "content": "Anyone know when UPT bonuses are added throughout the year I was on a leave of absence for 1 month, and when I came back on, the system put me a total of 80 hours of UPT bonus, I tried talking to HR b...",
+        "confidence": 0.9828118681907654
+      },
+      {
+        "type": "post",
+        "sentiment": "NEUTRAL",
+        "title": "Georgia raise",
+        "content": "Georgia raise Does anyone know if pga1, atl2 and mge3 are getting a raise ?",
+        "confidence": 0.9611783623695374
+      },
+      {
+        "type": "post",
+        "sentiment": "NEUTRAL",
+        "title": "Raise at DAB2?",
+        "content": "Raise at DAB2? I\u2019m donut shift so not sure if there was a meeting about raises today. Also it\u2019s a new facility so I doubt anything is happening. The only thing I saw was a Kahoot event about hurricane...",
+        "confidence": 0.932763934135437
+      }
+    ]
+  },
+  "timeline_analysis": {
+    "daily_distribution": {
+      "2025-09-16": 7,
+      "2025-09-17": 57
+    },
+    "hourly_distribution": {
+      "2": 1,
+      "4": 1,
+      "5": 2,
+      "6": 2,
+      "8": 5,
+      "9": 10,
+      "10": 9,
+      "11": 14,
+      "12": 4,
+      "13": 6,
+      "14": 4,
+      "15": 2,
+      "18": 1,
+      "19": 1,
+      "23": 2
+    },
+    "peak_day": "2025-09-17",
+    "peak_hour": 11
+  },
+  "engagement_metrics": {
+    "total_score": 1332,
+    "total_comments": 1521,
+    "average_score": 20.8,
+    "average_comments": 23.8
+  },
+  "cost_summary": {
+    "api_calls": 48,
+    "estimated_cost": 0.1161
+  },
+  "generated_at": "2025-09-17T15:21:01.293630"
+}

@@ -1,0 +1,41 @@
+🎯 AWS SENTIMENT ANALYZER TEST REPORT
+============================================================
+📊 Test Date: 2025-09-17T13:17:44.346565
+
+📈 TEST RESULTS SUMMARY
+------------------------------
+Total Tests: 6
+Passed: 6
+Failed: 0
+Success Rate: 100.0%
+
+🔍 INDIVIDUAL TEST RESULTS
+------------------------------
+✅ PASSED: Basic Functionality
+✅ PASSED: Fallback Behavior
+✅ PASSED: Batch Processing
+✅ PASSED: Edge Cases
+✅ PASSED: Statistics Tracking
+✅ PASSED: Configuration
+
+⚙️  CONFIGURATION SUMMARY
+------------------------------
+AWS Available: True
+AWS Enabled: False
+AWS Region: us-east-1
+Fallback Enabled: True
+
+📊 ANALYZER STATISTICS
+------------------------------
+Total Requests: 15
+AWS Requests: 0
+Fallback Requests: 15
+AWS Usage Rate: 0.0%
+Total AWS Cost: $0.0
+
+💡 RECOMMENDATIONS
+------------------------------
+✅ All tests passed! AWS sentiment analyzer is working correctly.
+🔧 AWS sentiment analysis is disabled. Enable it by setting AWS_SENTIMENT_ENABLED=true
+
+🔄 Run this test again after making configuration changes

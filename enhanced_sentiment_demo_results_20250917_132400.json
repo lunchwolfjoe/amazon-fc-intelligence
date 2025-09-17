@@ -1,0 +1,217 @@
+{
+  "demo_metadata": {
+    "timestamp": "2025-09-17T13:24:00.166976",
+    "total_posts_analyzed": 5,
+    "analyzer_config": {
+      "aws_enabled": false,
+      "aws_region": "us-east-1",
+      "aws_available": true,
+      "fallback_enabled": true,
+      "enable_emotions": true,
+      "enable_key_phrases": true,
+      "cost_per_100_chars": 0.0001,
+      "compensation_terms_count": 60,
+      "environment_variables": {
+        "AWS_SENTIMENT_ENABLED": "false",
+        "AWS_REGION": "us-east-1",
+        "AWS_ENABLE_EMOTIONS": "true",
+        "AWS_ENABLE_KEY_PHRASES": "true",
+        "AWS_ACCESS_KEY_ID": null,
+        "AWS_SECRET_ACCESS_KEY": null
+      }
+    },
+    "analyzer_stats": {
+      "aws_enabled": false,
+      "aws_region": "us-east-1",
+      "enable_emotions": true,
+      "enable_key_phrases": true,
+      "total_requests": 5,
+      "aws_requests": 0,
+      "fallback_requests": 5,
+      "aws_usage_rate": 0.0,
+      "fallback_usage_rate": 100.0,
+      "total_aws_cost": 0.0,
+      "average_cost_per_request": 0.0,
+      "total_emotions_detected": 0,
+      "total_key_phrases_extracted": 0
+    }
+  },
+  "results": [
+    {
+      "post_title": "Finally got my raise after 2 years!",
+      "result": {
+        "sentiment": "positive",
+        "confidence": 0.5,
+        "score": 1.0,
+        "source": "fallback",
+        "processing_time_ms": 0,
+        "estimated_cost": 0.0,
+        "raw_scores": {
+          "positive_indicators": 5,
+          "negative_indicators": 0,
+          "total_indicators": 5
+        },
+        "error": null,
+        "emotions": null,
+        "key_phrases": null,
+        "language_code": "en",
+        "timestamp": "2025-09-17T18:24:00.166768"
+      },
+      "expected": {
+        "title": "Finally got my raise after 2 years!",
+        "content": "I'm absolutely thrilled! After waiting 2 years, I finally got a $8000 salary increase. The new healthcare benefits package is amazing too - dental, vision, and 401k matching. This company really values its employees!",
+        "expected_sentiment": "positive",
+        "expected_emotions": [
+          "joy",
+          "excitement"
+        ],
+        "expected_phrases": [
+          "salary increase",
+          "healthcare benefits",
+          "401k matching"
+        ]
+      }
+    },
+    {
+      "post_title": "Devastating pay cuts announced today",
+      "result": {
+        "sentiment": "negative",
+        "confidence": 0.4,
+        "score": -1.0,
+        "source": "fallback",
+        "processing_time_ms": 0,
+        "estimated_cost": 0.0,
+        "raw_scores": {
+          "positive_indicators": 0,
+          "negative_indicators": 4,
+          "total_indicators": 4
+        },
+        "error": null,
+        "emotions": null,
+        "key_phrases": null,
+        "language_code": "en",
+        "timestamp": "2025-09-17T18:24:00.166821"
+      },
+      "expected": {
+        "title": "Devastating pay cuts announced today",
+        "content": "I'm furious and heartbroken about the 15% pay cut announcement. With inflation and rising cost of living, this feels like a slap in the face. How are we supposed to afford rent and groceries? The company is being greedy while we struggle.",
+        "expected_sentiment": "negative",
+        "expected_emotions": [
+          "anger",
+          "sadness"
+        ],
+        "expected_phrases": [
+          "pay cut",
+          "cost of living",
+          "inflation"
+        ]
+      }
+    },
+    {
+      "post_title": "Worried about upcoming layoffs",
+      "result": {
+        "sentiment": "negative",
+        "confidence": 0.1,
+        "score": -1.0,
+        "source": "fallback",
+        "processing_time_ms": 0,
+        "estimated_cost": 0.0,
+        "raw_scores": {
+          "positive_indicators": 0,
+          "negative_indicators": 1,
+          "total_indicators": 1
+        },
+        "error": null,
+        "emotions": null,
+        "key_phrases": null,
+        "language_code": "en",
+        "timestamp": "2025-09-17T18:24:00.166858"
+      },
+      "expected": {
+        "title": "Worried about upcoming layoffs",
+        "content": "I'm really anxious about the rumors of layoffs next month. My manager mentioned budget constraints and possible workforce reduction. What if I lose my job and health insurance? I have a family to support and a mortgage to pay.",
+        "expected_sentiment": "negative",
+        "expected_emotions": [
+          "fear",
+          "anxiety"
+        ],
+        "expected_phrases": [
+          "layoffs",
+          "budget constraints",
+          "health insurance"
+        ]
+      }
+    },
+    {
+      "post_title": "Mixed feelings about new bonus structure",
+      "result": {
+        "sentiment": "positive",
+        "confidence": 0.2,
+        "score": 1.0,
+        "source": "fallback",
+        "processing_time_ms": 0,
+        "estimated_cost": 0.0,
+        "raw_scores": {
+          "positive_indicators": 2,
+          "negative_indicators": 0,
+          "total_indicators": 2
+        },
+        "error": null,
+        "emotions": null,
+        "key_phrases": null,
+        "language_code": "en",
+        "timestamp": "2025-09-17T18:24:00.166893"
+      },
+      "expected": {
+        "title": "Mixed feelings about new bonus structure",
+        "content": "The new performance bonus system has me confused. On one hand, top performers can earn up to $5000 extra annually. But the criteria seem unclear and the base salary remains unchanged. I'm cautiously optimistic but also concerned about fairness.",
+        "expected_sentiment": "mixed",
+        "expected_emotions": [
+          "confusion",
+          "surprise"
+        ],
+        "expected_phrases": [
+          "performance bonus",
+          "base salary",
+          "top performers"
+        ]
+      }
+    },
+    {
+      "post_title": "Union negotiation update",
+      "result": {
+        "sentiment": "positive",
+        "confidence": 0.2,
+        "score": 1.0,
+        "source": "fallback",
+        "processing_time_ms": 0,
+        "estimated_cost": 0.0,
+        "raw_scores": {
+          "positive_indicators": 2,
+          "negative_indicators": 0,
+          "total_indicators": 2
+        },
+        "error": null,
+        "emotions": null,
+        "key_phrases": null,
+        "language_code": "en",
+        "timestamp": "2025-09-17T18:24:00.166926"
+      },
+      "expected": {
+        "title": "Union negotiation update",
+        "content": "Our union is making progress in negotiations for better compensation and working conditions. They're pushing for a living wage that keeps up with inflation, improved overtime policies, and better retirement benefits. Solidarity!",
+        "expected_sentiment": "positive",
+        "expected_emotions": [
+          "hope",
+          "determination"
+        ],
+        "expected_phrases": [
+          "union",
+          "living wage",
+          "overtime policies",
+          "retirement benefits"
+        ]
+      }
+    }
+  ]
+}

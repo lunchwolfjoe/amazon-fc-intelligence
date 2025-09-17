@@ -1,0 +1,56 @@
+{
+  "TableName": "amazon-fc-posts",
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "created_utc",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "created_utc",
+      "AttributeType": "N"
+    },
+    {
+      "AttributeName": "subject_area",
+      "AttributeType": "S"
+    }
+  ],
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "subject-area-index",
+      "KeySchema": [
+        {
+          "AttributeName": "subject_area",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "created_utc",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "Tags": [
+    {
+      "Key": "Project",
+      "Value": "AmazonFCIntelligence"
+    },
+    {
+      "Key": "Environment",
+      "Value": "Production"
+    }
+  ]
+}

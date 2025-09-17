@@ -1,0 +1,23 @@
+
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - pip install -r requirements.txt
+            - python setup_aws_resources.py
+        build:
+          commands:
+            - echo "Building Amazon FC Intelligence Platform"
+            - python collect_initial_data.py
+        postBuild:
+          commands:
+            - echo "Build completed"
+      artifacts:
+        baseDirectory: /
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - '.cache/**/*'

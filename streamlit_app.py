@@ -83,29 +83,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 @st.cache_data(ttl=3600)
-def load_unified_data():
-    """Load data from unified database - single source of truth."""
-    
-    # Try to load from unified data file first
-    if os.path.exists('unified_dashboard_data.json'):
-        try:
-            with open('unified_dashboard_data.json', 'r') as f:
-                return json.load(f)
-        except Exception as e:
-            st.warning(f"Could not load unified data: {e}")
-    
-    # Fallback: try to load from database directly
-    try:
-        from unified_data_pipeline import UnifiedDataManager
-        dm = UnifiedDataManager()
-        return dm.get_dashboard_data()
-    except Exception as e:
-        st.warning(f"Could not load from database: {e}")
-    
-    # Final fallback: generate sample data
-    return generate_sample_dataset()
-
-def generate_sample_dataset():
+def generate_comprehensive_dataset():
     """Generate a comprehensive dataset with hundreds of posts."""
     
     # Sample post templates for each subject
@@ -738,9 +716,9 @@ def create_subject_analysis(data):
 def main():
     """Main application."""
     
-    # Load data from unified source
-    with st.spinner("🔄 Loading Amazon FC Intelligence Data from Database..."):
-        data = load_unified_data()
+    # Load data
+    with st.spinner("🔄 Loading Amazon FC Intelligence Data..."):
+        data = generate_comprehensive_dataset()
     
     # Sidebar
     st.sidebar.markdown("## 🎯 Navigation")

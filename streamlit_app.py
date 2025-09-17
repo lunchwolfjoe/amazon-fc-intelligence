@@ -348,6 +348,10 @@ def create_subject_analysis(data):
     
     subject_areas = data['subject_areas']
     
+    if not subject_areas:
+        st.warning("No subject areas found in data")
+        return
+    
     # Subject selection
     subjects = list(subject_areas.keys())
     subject_names = [s.replace('_', ' ').title() for s in subjects]
@@ -424,62 +428,139 @@ def create_subject_analysis(data):
     st.markdown("#### 📝 Top Posts Analysis")
     
     top_posts = subject_data.get('top_posts', [])
+    
     if top_posts:
-        for i, post in enumerate(top_posts[:5]):
-            with st.expander(f"📄 Post {i+1}: {post.get('title', 'Untitled')}", expanded=i==0):
+        st.info(f"📊 **{len(top_posts)} total posts** available for {selected_subject_name} - Use filters and pagination controls below to explore all posts")
+    if top_posts and isinstance(top_posts, list):
+        
+        # Add filtering, sorting and pagination controls
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            sentiment_filter = st.multiselect(
+                "Filter by sentiment",
+                ["NEGATIVE", "NEUTRAL", "POSITIVE", "MIXED"],
+                default=["NEGATIVE", "NEUTRAL", "POSITIVE", "MIXED"],
+                key=f"sentiment_filter_{selected_subject}"
+            )
+        
+        with col2:
+            sort_by = st.selectbox(
+                "Sort posts by",
+                ["Score (High to Low)", "Score (Low to High)", "Comments (Most)", "Comments (Least)", "Original Order"],
+                key=f"sort_by_{selected_subject}"
+            )
+        
+        with col3:
+            posts_per_page = st.selectbox("Posts per page", [10, 20, 30, 50], index=1, key=f"posts_per_page_{selected_subject}")
+        
+        # Filter posts by sentiment
+        filtered_posts = [post for post in top_posts if post.get('sentiment', 'NEUTRAL') in sentiment_filter]
+        
+        # Sort filtered posts based on selection
+        sorted_posts = filtered_posts.copy()
+        if sort_by == "Score (High to Low)":
+            sorted_posts = sorted(filtered_posts, key=lambda x: x.get('score', 0), reverse=True)
+        elif sort_by == "Score (Low to High)":
+            sorted_posts = sorted(filtered_posts, key=lambda x: x.get('score', 0))
+        elif sort_by == "Comments (Most)":
+            sorted_posts = sorted(filtered_posts, key=lambda x: x.get('num_comments', x.get('comments', 0)), reverse=True)
+        elif sort_by == "Comments (Least)":
+            sorted_posts = sorted(filtered_posts, key=lambda x: x.get('num_comments', x.get('comments', 0)))
+        
+        total_posts = len(sorted_posts)
+        total_pages = (total_posts - 1) // posts_per_page + 1 if total_posts > 0 else 1
+        
+        # Show filtering results
+        if len(sorted_posts) != len(top_posts):
+            st.success(f"🔍 Showing {len(sorted_posts)} posts (filtered from {len(top_posts)} total)")
+        
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            if total_posts > 0:
+                page = st.selectbox(
+                    f"Page (showing {min(posts_per_page, total_posts)} of {total_posts} filtered posts)",
+                    range(1, total_pages + 1),
+                    key=f"page_selector_{selected_subject}"
+                )
+            else:
+                st.warning("No posts match the current filters")
+                page = 1
+        
+        # Calculate start and end indices
+        start_idx = (page - 1) * posts_per_page
+        end_idx = min(start_idx + posts_per_page, total_posts)
+        
+        # Show posts for current page
+        for i, post in enumerate(sorted_posts[start_idx:end_idx]):
+            if isinstance(post, dict):
+                post_num = start_idx + i + 1
+                with st.expander(f"📄 Post {post_num}: {post.get('title', 'Untitled')}", expanded=i==0 and page==1):
                 
-                col1, col2 = st.columns([3, 1])
+                    col1, col2 = st.columns([3, 1])
+                    
+                    with col1:
+                        st.markdown(f"**Title:** {post.get('title', 'N/A')}")
+                        
+                        content = post.get('content', post.get('selftext', ''))
+                        if content and content != '[deleted]':
+                            st.markdown(f"**Content:** {content[:500]}{'...' if len(content) > 500 else ''}")
+                        
+                        # Sentiment analysis
+                        sentiment = post.get('sentiment', 'NEUTRAL')
+                        confidence = post.get('confidence', 0.5)
+                        
+                        if sentiment == 'NEGATIVE':
+                            st.markdown('<span class="sentiment-negative">Negative Sentiment</span>', unsafe_allow_html=True)
+                        elif sentiment == 'POSITIVE':
+                            st.markdown('<span class="sentiment-positive">Positive Sentiment</span>', unsafe_allow_html=True)
+                        else:
+                            st.markdown('<span class="sentiment-neutral">Neutral Sentiment</span>', unsafe_allow_html=True)
+                    
+                    with col2:
+                        st.metric("Score", post.get('score', 0))
+                        st.metric("Comments", post.get('num_comments', post.get('comments', 0)))
+                        
+                        if confidence > 0.8:
+                            st.markdown('<span class="confidence-high">High Confidence</span>', unsafe_allow_html=True)
+                        elif confidence > 0.6:
+                            st.markdown('<span class="confidence-medium">Medium Confidence</span>', unsafe_allow_html=True)
+                        else:
+                            st.markdown('<span class="confidence-low">Low Confidence</span>', unsafe_allow_html=True)
                 
-                with col1:
-                    st.markdown(f"**Title:** {post.get('title', 'N/A')}")
+                    # Comments analysis
+                    comments = post.get('comments', [])
+                    comment_count = post.get('num_comments', 0)
                     
-                    content = post.get('content', post.get('selftext', ''))
-                    if content and content != '[deleted]':
-                        st.markdown(f"**Content:** {content[:500]}{'...' if len(content) > 500 else ''}")
-                    
-                    # Sentiment analysis
-                    sentiment = post.get('sentiment', 'NEUTRAL')
-                    confidence = post.get('confidence', 0.5)
-                    
-                    if sentiment == 'NEGATIVE':
-                        st.markdown('<span class="sentiment-negative">Negative Sentiment</span>', unsafe_allow_html=True)
-                    elif sentiment == 'POSITIVE':
-                        st.markdown('<span class="sentiment-positive">Positive Sentiment</span>', unsafe_allow_html=True)
+                    # Handle both comment count (number) and comment list (array)
+                    if isinstance(comments, list) and comments:
+                        st.markdown("**💬 Top Comments:**")
+                        for j, comment in enumerate(comments[:3]):
+                            if isinstance(comment, dict):
+                                comment_text = comment.get('body', comment.get('content', ''))
+                                if comment_text and comment_text != '[deleted]':
+                                    comment_sentiment = comment.get('sentiment', 'NEUTRAL')
+                                    sentiment_class = f"sentiment-{comment_sentiment.lower()}"
+                                    
+                                    st.markdown(f"""
+                                    <div class="comment-thread">
+                                        <div style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                            {comment_text[:200]}{'...' if len(comment_text) > 200 else ''}
+                                        </div>
+                                        <span class="{sentiment_class}">{comment_sentiment}</span>
+                                        <span style="margin-left: 1rem; color: #6c757d; font-size: 0.8rem;">
+                                            Score: {comment.get('score', 0)}
+                                        </span>
+                                    </div>
+                                    """, unsafe_allow_html=True)
+                    elif isinstance(comments, int) or comment_count > 0:
+                        # Show comment count if we don't have comment details
+                        actual_count = comments if isinstance(comments, int) else comment_count
+                        st.markdown(f"**💬 {actual_count} Comments** (detailed analysis available in full dataset)")
                     else:
-                        st.markdown('<span class="sentiment-neutral">Neutral Sentiment</span>', unsafe_allow_html=True)
-                
-                with col2:
-                    st.metric("Score", post.get('score', 0))
-                    st.metric("Comments", post.get('num_comments', 0))
-                    
-                    if confidence > 0.8:
-                        st.markdown('<span class="confidence-high">High Confidence</span>', unsafe_allow_html=True)
-                    elif confidence > 0.6:
-                        st.markdown('<span class="confidence-medium">Medium Confidence</span>', unsafe_allow_html=True)
-                    else:
-                        st.markdown('<span class="confidence-low">Low Confidence</span>', unsafe_allow_html=True)
-                
-                # Comments analysis
-                comments = post.get('comments', [])
-                if comments:
-                    st.markdown("**💬 Top Comments:**")
-                    for j, comment in enumerate(comments[:3]):
-                        comment_text = comment.get('body', comment.get('content', ''))
-                        if comment_text and comment_text != '[deleted]':
-                            comment_sentiment = comment.get('sentiment', 'NEUTRAL')
-                            sentiment_class = f"sentiment-{comment_sentiment.lower()}"
-                            
-                            st.markdown(f"""
-                            <div class="comment-thread">
-                                <div style="font-size: 0.9rem; margin-bottom: 0.5rem;">
-                                    {comment_text[:200]}{'...' if len(comment_text) > 200 else ''}
-                                </div>
-                                <span class="{sentiment_class}">{comment_sentiment}</span>
-                                <span style="margin-left: 1rem; color: #6c757d; font-size: 0.8rem;">
-                                    Score: {comment.get('score', 0)}
-                                </span>
-                            </div>
-                            """, unsafe_allow_html=True)
+                        st.markdown("**💬 No comments available**")
+    else:
+        st.info("No posts available for this subject area")
 
 def create_trend_analysis(data):
     """Create trend analysis dashboard."""
